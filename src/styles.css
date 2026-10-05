@@ -1896,3 +1896,146 @@ main,
     max-height: calc(100vh - 76px);
   }
 }
+
+/* --------------------------------------------------------------------------
+   October polish — smaller display type + blur-safe reveal clipping.
+   Regular/body copy is intentionally unchanged.
+   -------------------------------------------------------------------------- */
+
+/* Keep the reveal mask (so the line-by-line motion still feels clean), but
+   give the 10px filter enough breathing room so the blur never hits a hard
+   rectangular edge. Negative margins cancel the added visual buffer so this
+   does not change the surrounding layout. */
+.blur-reveal__line-clip {
+  --blur-reveal-buffer: 18px;
+  overflow: hidden;
+  padding: var(--blur-reveal-buffer);
+  margin: calc(var(--blur-reveal-buffer) * -1);
+}
+
+/* Carousel project names: smaller and safer on laptop/MacBook widths. */
+.orbit-flip-slider__info {
+  width: min(680px, calc(100% - 48px));
+  bottom: clamp(20px, 2.1vw, 30px);
+}
+
+.orbit-flip-slider__info h3 {
+  width: 100%;
+  max-width: 680px;
+  margin-inline: auto;
+  padding-inline: 10px;
+  font-size: clamp(22px, 2.5vw, 42px);
+  line-height: 1;
+  letter-spacing: -.045em;
+  text-wrap: balance;
+  overflow-wrap: anywhere;
+}
+
+/* Reduce only the large/display typography. Body and regular text stay at
+   their existing sizes. */
+.hero__headline--art {
+  font-size: clamp(54px, 8.15vw, 128px);
+  line-height: .86;
+}
+
+.artist-statement__lead {
+  font-size: clamp(44px, 5.55vw, 88px);
+  line-height: .97;
+}
+
+.project-editorial-grid__title {
+  font-size: clamp(38px, 4vw, 72px);
+  line-height: .92;
+}
+
+.project-editorial-grid__brief {
+  font-size: clamp(28px, 3.25vw, 56px);
+  line-height: 1;
+}
+
+@media (max-width: 1180px) {
+  .hero__headline--art {
+    font-size: clamp(50px, 8.55vw, 96px);
+  }
+
+  .artist-statement__lead {
+    font-size: clamp(42px, 6.2vw, 68px);
+  }
+
+  .project-editorial-grid__title {
+    font-size: clamp(36px, 6vw, 58px);
+  }
+
+  .project-editorial-grid__brief {
+    font-size: clamp(28px, 4.8vw, 46px);
+  }
+}
+
+@media (max-width: 900px) {
+  .hero__headline--art {
+    font-size: clamp(46px, 9.4vw, 70px);
+  }
+
+  .orbit-flip-slider__info h3 {
+    font-size: clamp(21px, 3.3vw, 34px);
+  }
+
+  .artist-statement__lead {
+    font-size: clamp(39px, 7.2vw, 60px);
+  }
+}
+
+@media (max-width: 700px) {
+  .blur-reveal__line-clip {
+    --blur-reveal-buffer: 14px;
+  }
+
+  .hero__headline--art {
+    font-size: clamp(38px, 10.6vw, 54px);
+    line-height: .9;
+  }
+
+  .orbit-flip-slider__info {
+    width: calc(100% - 36px);
+    bottom: 14px;
+  }
+
+  .orbit-flip-slider__info h3 {
+    font-size: clamp(20px, 6.5vw, 30px);
+    padding-inline: 6px;
+  }
+
+  .artist-statement__lead {
+    font-size: clamp(34px, 9.4vw, 48px);
+  }
+
+  .project-editorial-grid__title {
+    font-size: clamp(44px, 13vw, 68px);
+  }
+
+  .project-editorial-grid__brief {
+    font-size: clamp(30px, 9vw, 46px);
+  }
+}
+
+@media (max-width: 480px) {
+  .hero__headline--art {
+    font-size: clamp(36px, 10.2vw, 46px);
+  }
+
+  .orbit-flip-slider__info h3 {
+    font-size: clamp(19px, 6.2vw, 27px);
+  }
+
+  .artist-statement__lead {
+    font-size: clamp(32px, 9vw, 42px);
+  }
+
+  .project-editorial-grid__title {
+    font-size: clamp(42px, 12.8vw, 62px);
+  }
+
+  .project-editorial-grid__brief {
+    font-size: clamp(29px, 8.8vw, 42px);
+  }
+}
