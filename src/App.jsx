@@ -84,8 +84,8 @@ function Home() {
               initialMode="ring"
               showModeControls={false}
               backgroundColor="transparent"
-              imageWidth={90}
-              imageHeight={140}
+              imageWidth={96}
+              imageHeight={150}
               imageGap={0}
               enableHoverMovement
               hoverMoveY={-8}

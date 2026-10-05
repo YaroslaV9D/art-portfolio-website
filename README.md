@@ -101,3 +101,7 @@ This build intentionally does **not** subscribe to Supabase Realtime and does no
 - Adding or editing a Supabase project will appear after a normal browser refresh.
 
 The previous `supabase_realtime` publication setting can remain enabled in Supabase; this frontend simply no longer subscribes to it.
+
+## Carousel sizing refinement
+
+The Ring carousel is intentionally larger on Mac/laptop and iPhone-sized viewports. Responsive Ring scale now ranges from `0.66` on compact phones to `1.12` on large desktop screens, with slightly larger base cards (`96 × 150`).

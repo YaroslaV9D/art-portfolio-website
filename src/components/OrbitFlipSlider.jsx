@@ -22,11 +22,13 @@ const MOBILE_TILT_RADIUS_Y_SCALE = 0.8
 const MOBILE_GALLERY_SCALE = 0.6
 
 const getResponsiveRingScale = (width) => {
-  if (width <= SMALL_MOBILE_BREAKPOINT) return 0.48
-  if (width < MOBILE_BREAKPOINT) return 0.58
-  if (width <= TABLET_BREAKPOINT) return 0.76
-  if (width <= 1366) return 0.9
-  return 1
+  // Keep the Ring visually dominant across devices. Small phones used to
+  // shrink especially aggressively, which made the artwork feel too distant.
+  if (width <= SMALL_MOBILE_BREAKPOINT) return 0.66
+  if (width < MOBILE_BREAKPOINT) return 0.72
+  if (width <= TABLET_BREAKPOINT) return 0.88
+  if (width <= 1366) return 1.06
+  return 1.12
 }
 
 const degToRad = (deg) => (deg * Math.PI) / 180
